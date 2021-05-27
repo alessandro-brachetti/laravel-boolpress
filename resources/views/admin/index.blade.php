@@ -2,6 +2,15 @@
 
 @section('content')
 <div class="container">
+  <div class="row mt-3">
+    <ul>
+      <li><a href="{{ route('admin.index')}}">DASHBOARD</a></li>
+      <li><a href="{{ route('admin.posts.index')}}">POSTS</a></li>
+      <li><a href="#">USERS</a></li>
+      <li><a href="{{route('admin.categories.index')}}">CATEGORIES</a></li>
+      <li><a href="#">TAGS</a></li>
+    </ul>
+  </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,8 +28,6 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center mt-3">
-      <a href="{{ route('admin.posts.index')}}">YOUR POSTS</a>
-    </div>
+
 </div>
 @endsection

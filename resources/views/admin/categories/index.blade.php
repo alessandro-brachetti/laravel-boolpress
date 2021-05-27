@@ -13,23 +13,23 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <a href="{{route('admin.posts.create')}}">Crea Post</a>
+      <a href="{{route('admin.categories.create')}}">Crea Categoria</a>
     </div>
   </div>
     <div class="row justify-content-center">
-      @foreach ($posts as $post)
+      @foreach ($categories as $category)
         <div class="col-md-3">
           <div class="card">
             <div class="card-header">
-              {{ $post->title }}
+              {{ $category->name }}
             </div>
             <div class="card-body">
-                {{ $post->content }}
+
               <div class="">
-                <a href="{{ route('admin.posts.show', ['post'=> $post->slug]) }}">Show</a>
-                <a href="{{ route('admin.posts.edit', ['post'=> $post->id]) }}">Edit</a>
+                <a href="{{ route('admin.categories.show', ['category'=> $category->slug]) }}">Show</a>
+                <a href="{{ route('admin.categories.edit', ['category'=> $category->id]) }}">Edit</a>
               </div>
-              <form class="" action="{{ route('admin.posts.destroy', ['post'=> $post->id]) }}" method="post">
+              <form class="" action="{{ route('admin.categories.destroy', ['category'=> $category->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <input class="my-btn-tr" type="submit" name="delete" value="Delete">

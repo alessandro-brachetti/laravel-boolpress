@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('index');
-Route::get('posts/{post:slug}', 'PostController@show')->name('posts.show');
+Route::get('posts/{slug}', 'PostController@show')->name('posts.show');
 Route::get('/posts', 'PostController@index')->name('posts.index');
+Route::get('categories/{slug}', 'CategoryController@index')->name('category.index');
 
 Auth::routes();
 
@@ -24,4 +25,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
   ->group(function () {
     Route::get('/', 'HomeController@index')->name('index');
     Route::resource('posts', 'PostController');
+    Route::resource('categories', 'CategoryController');
+
   });

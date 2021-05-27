@@ -2,18 +2,19 @@
 
 @section('content')
 <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a href="{{route('admin.categories.index')}}">GET BACK</a>
+    </div>
+  </div>
     <div class="row justify-content-center">
-      @foreach ($posts as $post)
-        <div class="col-md-3">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                  {{$post->title}}
+                  <h2>{{ $category->name }}</h2>
                 </div>
-                <a href="{{ route('posts.show',['slug'=>$post->slug]) }}">Read more</a>
-
             </div>
         </div>
-      @endforeach
     </div>
-</div>
+  </div>
 @endsection

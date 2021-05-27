@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ route('admin.index') }}">Home</a>
+                        <a href="{{ route('admin.index') }}">{{ Auth::user()->name }}</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -78,20 +78,13 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
                     Boolpress
                 </div>
 
                 <div class="links">
-                  @if (Route::has('login'))
-                    @auth
-                      <a href="{{route('admin.posts.index')}}">Your Posts</a>
-                    @else
-                      <a href="{{route('posts.index')}}">Posts</a>
-                    @endauth
-                  @endif
+                  <a href="{{route('posts.index')}}">Posts</a>
                 </div>
             </div>
         </div>
