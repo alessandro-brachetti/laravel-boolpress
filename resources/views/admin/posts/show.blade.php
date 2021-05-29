@@ -17,6 +17,8 @@
                     {{$post->category->name}}
                     @endif
                   </h4>
+
+                  <img src="{{asset($post->cover)}}" alt="{{$post->title}}">
                 </div>
                 <div class="card-body">
                     {{ $post->content }}
