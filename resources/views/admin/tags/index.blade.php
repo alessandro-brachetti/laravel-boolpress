@@ -13,23 +13,23 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <a href="{{route('admin.categories.create')}}">Crea Categoria</a>
+      <a href="{{route('admin.tags.create')}}">Crea Tag</a>
     </div>
   </div>
     <div class="row justify-content-center">
-      @foreach ($categories as $category)
+      @foreach ($tags as $tag)
         <div class="col-md-3">
           <div class="card">
             <div class="card-header">
-              {{ $category->name }}
+              {{ $tag->name }}
             </div>
             <div class="card-body">
 
               <div class="">
-                <a href="{{ route('admin.categories.show', ['category'=> $category->slug]) }}">Show</a>
-                <a href="{{ route('admin.categories.edit', ['category'=> $category->id]) }}">Edit</a>
+                <a href="{{ route('admin.tags.show', ['tag'=> $tag->id]) }}">Show</a>
+                <a href="{{ route('admin.tags.edit', ['tag'=> $tag->id]) }}">Edit</a>
               </div>
-              <form class="" action="{{ route('admin.categories.destroy', ['category'=> $category->id]) }}" method="post">
+              <form class="" action="{{ route('admin.tags.destroy', ['tag'=> $tag->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <input class="my-btn-tr" type="submit" name="delete" value="Delete">

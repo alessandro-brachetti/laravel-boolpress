@@ -8,7 +8,7 @@
       <li><a href="{{ route('admin.posts.index')}}">POSTS</a></li>
       <li><a href="#">USERS</a></li>
       <li><a href="{{route('admin.categories.index')}}">CATEGORIES</a></li>
-      <li><a href="#">TAGS</a></li>
+      <li><a href="{{route('admin.tags.index')}}">TAGS</a></li>
     </ul>
   </div>
   <div class="row">

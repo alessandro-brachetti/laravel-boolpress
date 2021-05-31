@@ -22,7 +22,11 @@
                 </div>
                 <div class="card-body">
                     {{ $post->content }}
-
+                </div>
+                <div>
+                  @foreach ($post->tags as $tag)
+                    <a href="#"># {{$tag->name}}</a>
+                  @endforeach
                 </div>
             </div>
         </div>

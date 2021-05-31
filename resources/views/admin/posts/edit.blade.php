@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2>Crea Post</h2>
+      <h2>Modifica Post</h2>
     </div>
   </div>
     <div class="row justify-content-center">
@@ -48,6 +48,18 @@
               <label for="cover">Cover</label>
               <input class="form-control-file @error('cover') is-invalid @enderror" id="cover" type="file" name="cover" value="">
               @error('cover')
+                <small class="text-danger"> {{ $message }}</small>
+              @enderror
+            </div>
+
+            <div class="form-group">
+              <label for="tag">Tag</label>
+              <select class="form-control @error('tag_ids') is-invalid @enderror" id="tag" name="tag_ids[]" multiple>
+                @foreach ($tags as $tag)
+                  <option value="{{ $tag->id }}" {{$post->tags->contains($tag) ? 'selected' : ''}}>{{ $tag->name }}</option>
+                @endforeach
+              </select>
+              @error('tag_ids')
                 <small class="text-danger"> {{ $message }}</small>
               @enderror
             </div>
